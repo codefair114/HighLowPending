@@ -54,7 +54,7 @@ void CloseAllPendings() {
 bool IsMarketOpen() {
     MqlDateTime currentTimeStruct;
     TimeToStruct(TimeCurrent(), currentTimeStruct);  // Convert current time to MqlDateTime structure
-    if ((currentTimeStruct.day_of_week >= 1 && currentTimeStruct.day_of_week <= 5) &&
+    if ((currentTimeStruct.day_of_week >= 1 && currentTimeStruct.day_of_week < 5) &&
         (currentTimeStruct.hour >= openHour && currentTimeStruct.hour <= closeHour)) {
       return true;
     }
